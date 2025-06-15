@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.main {
+  position: relative;
+  /* background-color: rgb(19, 18, 18); */
+}
+
+.page1 {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(144, 204, 184, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.page1 h1 {
+  font-size: 5vw;
+  line-height: 6vw;
+  font-weight: 100;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+}
+
+.page2 {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(136, 103, 157, 0.813);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  transition: all ease 0.2s;
+}
+
+.elements {
+  /* background-color: rgba(230, 54, 54, 0.921); */
+  width: 100vw;
+  position: relative;
+  cursor: pointer;
+}
+
+.elements h2 {
+  font-size: 6.3vw;
+  text-transform: uppercase;
+  font-weight: 100;
+  position: relative;
+  z-index: 9;
+  line-height: 5.2vw;
+}
+
+.elements .moving {
+  background-color: rgb(243, 158, 127);
+  width: 100%;
+  white-space: nowrap;
+  padding: 4px 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  opacity: 0;
+  transition: all 0.45s ease-in-out;
+}
+
+.elements .moving .movingin {
+  /* background-color: chartreuse; */
+  display: inline-block;
+  animation-name: moving;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.elements .moving h5 {
+  color: black;
+  display: inline-block;
+  font-size: 15pxpx;
+  margin-right: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.elements:hover .moving {
+  opacity: 1;
+}
+.elements:hover h2 {
+  font-style: italic;
+}
+
+@keyframes moving {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.page3 {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: rgba(162, 154, 104, 0.72);
+}
+
+.img-div {
+  /* height: 34vw; */
+  width: 28vw;
+  position: relative;
+  overflow: hidden;
+  margin: 37px 18px;
+}
+.img-div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all ease 0.5s;
+}
+.image-container {
+  padding: 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #00000024;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.5s;
+  z-index: 9;
+}
+.overlay p {
+  font-size: 2.7vw;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+  color: whitesmoke;
+  opacity: 0;
+  transition: all ease 0.5s;
+  transition-delay: 0.2s;
+}
+.img-div:hover .overlay {
+  background-color: black;
+}
+.img-div:hover .overlay p {
+  opacity: 1;
+}
+
+.img-div:hover img {
+  scale: 1.1;
+}
+.loader {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* display: none; */
+}
+
+.loader h1 {
+  font-size: 5vw;
+  line-height: 6vw;
+  font-weight: 100;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  z-index: 9;
+}
+
+.loader video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 6;
+}
+
+.skyblue {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(144, 204, 184, 0.72);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.skyblue2 {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(144, 204, 184, 0.72);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8;
+}
+
+.nav {
+  position: absolute;
+  width: 100%;
+  padding: 20px 30px;
+  /* background-color: rgba(225, 143, 77, 0.956); */
+  z-index: 10;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-shadow: 1px 1px 2px black;
+}
+.nav span {
+  padding-inline: 4vw;
+  margin: 1vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.nav span:hover {
+  padding-inline: 5vw;
+  margin: 1vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: chartreuse;
+}
+.footer {
+  height: 40vh;
+  width: 100%;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.footer h2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 1vw;
+  cursor: pointer;
+}
+.footdown {
+  height: 50%;
+  width: 100%;
+  background-color: black;
+  color: wheat;
+}
+
+.footdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footdown .last {
+  margin-top: 2vw;
+}
+/* For all mobile devices: 0px to 768px */
+@media (max-width: 768px) {
+  .page1 h1,
+  .loader h1 {
+    font-size: 8vw;
+    line-height: 9vw;
+  }
+
+  .elements h2 {
+    font-size: 9vw;
+    line-height: 7.5vw;
+  }
+
+  .overlay p {
+    font-size: 4.5vw;
+    padding: 10px;
+  }
+
+  .image-container {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-div {
+    width: 90vw;
+    margin: 15px 0;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 20px;
+  }
+
+  .nav span {
+    padding-inline: 0;
+    margin: 5px 0;
+    font-size: 4.5vw;
+  }
+
+  .footer {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .footer h2 {
+    font-size: 4vw;
+  }
+
+  .footdown {
+    padding: 15px;
+  }
+
+  .footdown .last {
+    font-size: 3.5vw;
+    margin-top: 4vw;
+    text-align: center;
+  }
+  .nav span {
+    font-size: 3.6vw;
+    padding-inline: 2vw;
+  }
+}
